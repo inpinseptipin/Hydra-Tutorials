@@ -112,5 +112,22 @@ a.setScale(16)
 
 noise(()=>(a.fft[1]*255),0,1).rotate(()=>(a.fft[2]*32)).out()
 a.show()
+```
+### Override an existing Sketch with Audio Reactivity
+```javascript
+a.setBins(4)
+a.setSmooth(0.7)
+a.setCutoff(6)
+a.setScale(16)
+osc(6, 0, 0.8)
+  .color(1.14, 0.6,.80)
+  .rotate(0.92, 0.3)
+  .pixelate(20, 10)
+  .mult(osc(40, 0.03).thresh(0.4).rotate(0, -0.02))
+  .modulateRotate(osc(20, 0).thresh(0.3, 0.6), () => 0.1 + a.fft[1] )
+  .out(o0)
+```
+
+
 
 ```
