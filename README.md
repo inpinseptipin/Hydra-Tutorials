@@ -65,17 +65,16 @@ render()
 ### Noise | noise(scale,offset) | Perlin Noise  
 - scale: Blobs of noise that would be rendered [0,10]
 - offset: Refresh rate for the noise (In Seconds)
-1. Displays a red solid color
+1. Displays a noise blob
 ```javascript
-solid(1,0,0,1).out()
+noise(1,0).out()
 ```
 
-[Sandbox : Red Solid Color](https://hydra.ojack.xyz/?code=c29saWQoMSUyQzAlMkMwJTJDMSkub3V0KCklMEE%3D "@embed")
+[Sandbox : static noise frame](https://hydra.ojack.xyz/?code=bm9pc2UoMSUyQzApLm91dCgp "@embed")
 
-2. Displays two solid color blocks and render them in individual blocks
+2. Displays Noise in Motion
 ```javascript
-solid(1,0,0,1).out(o0)
-solid(0,1,0,1).out(o1)
+noise(5,1).out()
 render()
 ```
-[Sandbox : Displays two solid color blocks](https://hydra.ojack.xyz/?code=c29saWQoMSUyQzAlMkMwJTJDMSkub3V0KG8wKSUwQXNvbGlkKDAlMkMxJTJDMCUyQzEpLm91dChvMSklMEFyZW5kZXIoKQ%3D%3D "@embed")
+[Sandbox : Noise in Motion](https://hydra.ojack.xyz/?code=bm9pc2UoNSUyQzEpLm91dCgp "@embed")
