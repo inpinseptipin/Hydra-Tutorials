@@ -78,3 +78,39 @@ noise(5,1).out()
 render()
 ```
 [Sandbox : Noise in Motion](https://hydra.ojack.xyz/?code=bm9pc2UoNSUyQzEpLm91dCgp "@embed")
+
+---
+# Audio Reactivity
+Audio Reactivity in Hydra can be enabled by using object "a". 
+
+## Common Functions
+### setBins(int numberOfBins) | Range [1,12]
+This sets the number of FFT bins for analysis.
+### setSmooth(float smoothFactor) | Range [0,1]
+This sets the FFT refresh rate, 0 : Highest refresh rate, 1: Slowest Refresh Rate
+### setCutoff(float cutoffFactor) | Range [0,40]
+Minimum threshold value in an fft bin. Values less than the threshold are disregarded for reactivity.
+### setScale(float scaleAmount) | Range [0,40]
+Sets the FFT Bin Scale
+
+### Code Example for Setting up Audio Reactivity
+
+```javascript
+a.setBins(4)
+a.setSmooth(0.7)
+a.setCutoff(6)
+a.setScale(16)
+a.show()
+```
+
+### Basic Audio Reactive Visualizer using noise
+```javascript
+a.setBins(4)
+a.setSmooth(0.7)
+a.setCutoff(6)
+a.setScale(16)
+
+noise(()=>(a.fft[1]*255),0,1).rotate(()=>(a.fft[2]*32)).out()
+a.show()
+
+```
