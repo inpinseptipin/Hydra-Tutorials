@@ -16,4 +16,10 @@ In Audio MIDI settings, create a Multioutput device and select "Mac Output Speak
 
 
 ## Hydra Basic Components
+### Visual Oscillator (osc)
+1. Showcase a basic visual oscillator
+```javascript
+osc().out()
+```
+[Sandbox : Basic Osc](https://hydra.ojack.xyz/?code=b3NjKCkub3V0KCk%3D "@embed")
 
