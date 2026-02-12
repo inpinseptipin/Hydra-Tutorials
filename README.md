@@ -16,15 +16,15 @@ In Audio MIDI settings, create a Multioutput device and select "Mac Output Speak
 
 
 # Hydra Basic Components
+---
 ## Sources
-
 ### Visual Oscillator (osc)
 
 **Function Prototype : osc(frequency,sync,color_offset)**
 
-- Frequency : Instances of a particular color in a single frame
-- Sync : Refresh rate
-- Color offset : Range of colors that would be shown.
+- Frequency : Instances of a particular color in a single frame [0,100]
+- Sync : Refresh rate in seconds [0,Screen Refresh Rate]
+- Color offset : Range of colors that would be shown. [0,1]
 
 1. Displays a basic visual oscillator
 ```javascript
@@ -59,4 +59,23 @@ solid(1,0,0,1).out(o0)
 solid(0,1,0,1).out(o1)
 render()
 ```
-[Sandbox : Oscv2]( "@embed")
+[Sandbox : Displays two solid color blocks](https://hydra.ojack.xyz/?code=c29saWQoMSUyQzAlMkMwJTJDMSkub3V0KG8wKSUwQXNvbGlkKDAlMkMxJTJDMCUyQzEpLm91dChvMSklMEFyZW5kZXIoKQ%3D%3D "@embed")
+
+---
+### Noise | noise(scale,offset) | Perlin Noise  
+- scale: Blobs of noise that would be rendered [0,10]
+- offset: Refresh rate for the noise (In Seconds)
+1. Displays a red solid color
+```javascript
+solid(1,0,0,1).out()
+```
+
+[Sandbox : Red Solid Color](https://hydra.ojack.xyz/?code=c29saWQoMSUyQzAlMkMwJTJDMSkub3V0KCklMEE%3D "@embed")
+
+2. Displays two solid color blocks and render them in individual blocks
+```javascript
+solid(1,0,0,1).out(o0)
+solid(0,1,0,1).out(o1)
+render()
+```
+[Sandbox : Displays two solid color blocks](https://hydra.ojack.xyz/?code=c29saWQoMSUyQzAlMkMwJTJDMSkub3V0KG8wKSUwQXNvbGlkKDAlMkMxJTJDMCUyQzEpLm91dChvMSklMEFyZW5kZXIoKQ%3D%3D "@embed")
